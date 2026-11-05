@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Bautizo de Hannah Samira</title>
+<meta name="theme-color" content="#6b4a7a">
+<meta name="description" content="Acompáñanos a celebrar el bautizo de Hannah Samira Benítez Díaz.">
+
+<!-- Open Graph para compartir en WhatsApp -->
+<meta property="og:title" content="Bautizo de Hannah Samira">
+<meta property="og:description" content="Acompáñanos el sábado 9 de enero de 2027 · 3:00 P. M.">
+<meta property="og:image" content="https://unsplash.com/es/fotos/un-ramo-de-flores-de-color-purpura-y-rosa-FDt60yE8RiQ">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Precarga de la imagen del hero -->
+<link rel="preload" as="image" href="https://unsplash.com/es/fotos/un-ramo-de-flores-de-color-purpura-y-rosa-FDt60yE8RiQ">
+
+<style>
+:root{
+  --violet:#6b4a7a;
+  --deep:#4a2d5a;
+  --lilac:#b48cc4;
+  --pink:#d9a3c4;
+  --rose:#f3d9e8;
+  --gold:#c9a87c;
+  --ink:#5a4666;
+  --bg-soft:#fdf8fc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif; color:var(--ink); background:linear-gradient(160deg,#fdf9fc 0%,#f6ecf5 45%,#fdf6fa 100%); overflow-x:hidden; position:relative;}
+/* Patrón de puntos */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18; background-image:radial-gradient(#c9a8d4 1px,transparent 1px); background-size:24px 24px;}
+body > *{position:relative;z-index:1}
+section{padding:64px 20px}
+.container{max-width:1000px;margin:auto}
+.script{font-family:'Great Vibes',cursive}
+.section-heading{text-align:center;margin-bottom:32px}
+.section-heading .script{font-size:clamp(34px,5.5vw,48px);color:var(--violet);line-height:1.2}
+.section-heading h2{font:600 clamp(26px,4.5vw,38px) 'Cormorant Garamond',serif;color:var(--deep);margin-top:2px}
+.section-heading p{font-size:10px;letter-spacing:3px;margin-top:10px;color:#a688b3;text-transform:uppercase}
+
+/* HERO */
+.hero {
+  height: clamp(320px, 52vh, 400px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+  padding: 28px 20px;
+  background-color: #4a2d5a;
+  background-image:
+    linear-gradient(180deg, rgba(48,24,60,.08) 0%, rgba(48,24,60,.22) 100%),
+    url('./img/cabecera.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Contenedor del contenido debajo del hero */
+.hero-below { text-align: center; padding: 40px 20px 10px; background: linear-gradient(160deg,#fdf9fc 0%,#f6ecf5 45%,#fdf6fa 100%);}
+.hero-content{max-width:820px;margin:auto;position:relative;z-index:1;animation:appear 1.2s ease}
+.hero-below .hero-content{text-shadow:none}
+.hero .small-text,
+.hero-below .small-text{letter-spacing:5px;font-size:10.5px;text-transform:uppercase;margin-bottom:14px}
+.hero h1,
+.hero-below h1{font:clamp(46px,8.5vw,82px)/1 'Great Vibes',cursive}
+.hero h2,
+.hero-below h2{font:400 clamp(16px,3vw,23px) 'Cormorant Garamond',serif;letter-spacing:4px;margin-top:10px}
+.hero .ornament,
+.hero-below .ornament{font-size:22px;margin:12px 0}
+.hero .subtitle,
+.hero-below .subtitle{font-size:11px;letter-spacing:3px}
+.hero-below .small-text{color:#a688b3}
+.hero-below h1{color:var(--violet)}
+.hero-below h2{color:var(--deep)}
+.hero-below .ornament{color:var(--pink)}
+.hero-below .subtitle{color:var(--ink)}
+.hero .small-text{opacity:.95}
+.hero .ornament{color:#f6dcea}
+.hero-content{text-shadow:0 2px 14px rgba(50,20,65,.55)}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* Detalles florales */
+.flower-corner{position:absolute;z-index:0;color:#c99fd0;opacity:.5;font-size:clamp(32px,7vw,70px);line-height:1.05;pointer-events:none}
+.flower-corner span{display:block;font-size:.55em;color:#e3b8d4;margin-left:22px}
+.flower-tl{top:0;left:0}
+.flower-tr{top:0;right:0;transform:scaleX(-1)}
+.flower-bl{bottom:0;left:0;transform:rotate(180deg)}
+.flower-br{bottom:0;right:0;transform:rotate(180deg) scaleX(-1)}
+.card{
+  background:#ffffffe0;
+  border:1px solid #ecd8ec;
+  border-radius:24px;
+  box-shadow:0 14px 40px rgba(107,74,122,.08);
+  padding:32px;
+  position:relative;
+  overflow:hidden;
+}
+.card:before{content:"✧  ❀  ✧";display:block;text-align:center;color:#c79ac4;font-size:20px;margin-bottom:16px}
+
+/* ESTILOS NUEVOS PARA LA IMAGEN DE LA INVITACIÓN */
+.invitation{position:relative;text-align:center;background:linear-gradient(#fdf7fcee,#f7eef9ee);overflow:hidden}
+.invitation-image-container {
+  background: linear-gradient(135deg, #fdf9fd, #f3e6f5);
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px rgba(180, 140, 196, 0.2), 0 10px 30px rgba(107, 74, 122, 0.15);
+  border: 1px solid #e6d2ea;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.invitation-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* --- SECCIÓN DE FECHA MÁS COMPACTA VERTICALMENTE --- */
+.date-section{ background:linear-gradient(135deg,#5e3a72,#8a5f9e,#d6a0c4); color:#fff; text-align:center; padding: 30px 20px; /* Reducido de 64px a 30px verticalmente */}
+
+/* Juntamos el título con el resto del contenido */
+.date-section .section-heading{ margin-bottom: 15px; }
+.date-section .section-heading h2,
+.date-section .section-heading .script,
+.date-section .section-heading p{color:#fff}
+.date-main{  font:clamp(30px,6vw,50px) 'Cormorant Garamond',serif; margin: 5px 0; /* Menos espacio entre "Sábado" y la fecha */letter-spacing:2px;}
+.date-sub{ letter-spacing:3px; font-size:11px; text-transform:uppercase;}
+
+/* Cuenta regresiva más pegada y con menos altura */
+.countdown{ display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:15px; /* Antes 30px */}
+.count-box{
+  min-width:75px;
+  padding:8px 10px; /* Menos altura en los cuadros */
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:12px;
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(8px);
+}
+.count-box strong{  display:block; font:600 28px 'Cormorant Garamond',serif; /* Números más chicos */}
+.count-box span{
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+#count-message{
+  margin-top:12px; /* Pegado a los cuadros */
+  font-size:12px;
+  opacity:.95;
+}
+
+/* --- SECCIÓN DE UBICACIÓN MÁS COMPACTA Y ORDENADA --- */
+.location{
+  background:#fdf9fd;
+  padding: 30px 20px; /* Reducimos el espacio general de la sección */
+}
+
+/* Ajustamos el encabezado para que no deje tanto espacio abajo */
+.location .section-heading {margin-bottom: 15px;}
+
+.location-card{
+  text-align:center;
+  max-width:820px;
+  margin:auto;
+  padding: 24px; /* Un poco menos de espacio interno en la tarjeta */
+}
+
+.location-icon{
+  font-size:32px;
+  color:var(--pink);
+  margin-bottom: 5px; /* Pegamos el icono al título */
+}
+
+.location-card h3{
+  font:600 30px 'Cormorant Garamond',serif;
+  color:var(--violet);
+  margin: 0 0 10px 0; /* Quitamos el margen superior y dejamos uno pequeño abajo */
+}
+
+.location-card p{
+  font-size:14px;
+  line-height:1.6; /* Reducimos un poco el interlineado */
+  margin-bottom: 12px; /* Espacio entre párrafos de texto */
+}
+
+/* El mapa lo hacemos un poco más bajo para que no ocupe tanta pantalla */
+.map{ width:100%;height:260px; border:0; border-radius:16px;  margin-top: 5px; /* Pegamos el mapa al texto de la dirección */}
+/* Pegamos el botón al mapa */
+.location-card .btn { margin-top: 15px;}
+.btn{
+  display:inline-block;border:0;border-radius:50px;padding:14px 26px;margin-top:18px;
+  background:linear-gradient(110deg,#6b4a7a,#b87aa8);color:#fff;text-decoration:none;
+  font:600 12px 'Montserrat',sans-serif;letter-spacing:1px;cursor:pointer;
+  box-shadow:0 6px 18px rgba(107,74,122,.25);transition:.25s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(107,74,122,.35)}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
+.rsvp{background:linear-gradient(140deg,#f8e8f3,#f0e2f6)}
+.rsvp-card{max-width:650px;margin:auto}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--deep);margin-bottom:9px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:14px;border:1px solid #e6d2ea;border-radius:12px;
+  background:#fffaff;color:var(--ink);font:14px 'Montserrat',sans-serif;outline:none;transition:.2s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(107,74,122,.12);}
+.form-group textarea{min-height:95px;resize:vertical}
+.form-hint{font-size:11px;color:#9b86a6;text-align:right;margin-top:5px}
+.radio-group{display:flex;gap:12px;flex-wrap:wrap}
+.radio-option{flex:1;min-width:130px}
+.radio-option input{display:none}
+.radio-option label{padding:13px;text-align:center;border:1px solid #e6d2ea;border-radius:12px;background:#fffaff;cursor:pointer;transition:.2s}
+.radio-option input:checked+label{background:var(--violet);border-color:var(--violet);color:#fff}
+
+/* Aquí se quitó el display:none para que siempre sea visible */
+#people-group{display:block;} 
+.rsvp-card .btn{width:100%;font-size:13px}
+.final-section{position:relative;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#5e3a72,#a874a5);color:#fff;overflow:hidden}
+.final-section .script{font-size:clamp(42px,7.5vw,68px)}
+.final-section p{font-size:12px;letter-spacing:2px;line-height:2;margin-top:16px;opacity:.95}
+footer{background:#3f2449;color:#e8d6ee;text-align:center;padding:20px;font-size:12px;letter-spacing:1px;line-height:1.6}
+.music-button{ position:fixed;right:18px;bottom:18px;z-index:100;width:56px;height:56px; border:2px solid #fff;border-radius:50%;color:#fff;font-size:22px; background:linear-gradient(135deg,#6b4a7a,#cf8fb8); box-shadow:0 5px 20px rgba(107,74,122,.4);cursor:pointer;}
+.music-button.playing{animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(212,142,184,0),0 5px 22px rgba(107,74,122,.5)}}
+@media(max-width:650px){section{padding:52px 15px}.hero{padding:22px 16px}.hero .small-text,.hero-below .small-text{letter-spacing:3px;font-size:9.5px}.hero .ornament,.hero-below .ornament{font-size:18px;margin:10px 0}.card{padding:24px 18px}.count-box{min-width:70px;padding:12px 8px}.count-box strong{font-size:30px}.map{height:260px}.invitation-image-container{padding:10px;}}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hero"></header>
+
+<div class="hero-below">
+  <div class="hero-content">
+    <p class="small-text">Un día especial · Una bendición de Dios</p>
+    <h1>Hannah Samira</h1>
+    <div class="ornament">✧ ♡ ✧</div>
+    <h2>MI BAUTIZO</h2>
+    <p class="subtitle">SÁBADO 09 · ENERO · 2027</p>
+  </div>
+</div>
+
+<section class="invitation">
+  <div class="flower-corner flower-tl">❀<span>✿</span>✧</div>
+  <div class="flower-corner flower-tr">❀<span>✿</span>✧</div>
+  <div class="flower-corner flower-bl">❀<span>✿</span>✧</div>
+  <div class="flower-corner flower-br">❀<span>✿</span>✧</div>
+  <div class="container">
+    <div class="section-heading">
+      <div class="script">Con la bendición de Dios</div>
+       </div>
+    <div class="card">
+      <!-- AQUÍ SE COLOCÓ LA IMAGEN NUEVA -->
+      <div class="invitation-image-container">
+        <!-- Cambia 'invitacion.png' por el nombre exacto de tu archivo de imagen -->
+        <img src="./img/invitacion.png" alt="Invitación al Bautizo de Hannah Samira" class="invitation-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="date-section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="script">Aparta la fecha</div>
+      <h2>¡Cada vez falta menos!</h2>
+      <p>Te esperamos para celebrar juntos</p>
+    </div>
+    <div class="date-sub">Sábado</div>
+    <div class="date-main">09 · ENERO · 2027</div>
+    <div class="date-sub">Comida · 3:00 de la tarde</div>
+    <div class="countdown">
+      <div class="count-box"><strong id="days">00</strong><span>Días</span></div>
+      <div class="count-box"><strong id="hours">00</strong><span>Horas</span></div>
+      <div class="count-box"><strong id="minutes">00</strong><span>Minutos</span></div>
+      <div class="count-box"><strong id="seconds">00</strong><span>Segundos</span></div>
+    </div>
+    <p id="count-message" aria-live="polite">Cada segundo nos acerca a este día tan especial ♡</p>
+  </div>
+</section>
+
+<section class="location">
+  <div class="container">
+    <div class="section-heading">
+      <div class="script">Nos encantará verte</div>
+      <h2>¿Dónde nos vemos?</h2>
+      <p>El lugar de nuestra celebración</p>
+    </div>
+    <div class="card location-card">
+      <div class="location-icon"></div>
+      <h3>La Celebración</h3>
+      <p>Yautepec-Cuautla 99, Tabachines,<br>62730 Yautepec de Zaragoza, Morelos.<br>
+      <strong>Referencia: A un lado del OXXO Itzamatitlán.</strong></p>
+      <iframe class="map" src="https://www.google.com/maps?q=18.8966545,-99.0380349&z=16&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Mapa para llegar a la celebración"></iframe>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=18.8966545%2C-99.0380349" target="_blank" rel="noopener noreferrer">📍 CÓMO LLEGAR</a>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp">
+  <div class="container">
+    <div class="section-heading">
+      <div class="script">Tu presencia es nuestro regalo</div>
+      <h2>Confirma tu asistencia</h2>
+      <p>Queremos compartir este momento contigo</p>
+    </div>
+    <div class="card rsvp-card">
+      <form id="rsvp-form" novalidate>
+        <div class="form-group">
+          <label for="guest-name">Nombre del invitado</label>
+          <input type="text" id="guest-name" placeholder="Escribe tu nombre completo" required maxlength="100" autocomplete="name" inputmode="text">
+        </div>
+        <div class="form-group">
+          <label>¿Nos acompañarás?</label>
+          <div class="radio-group">
+            <div class="radio-option"><input type="radio" id="yes" name="attendance" value="Sí asistiré" required><label for="yes">♡ Sí, asistiré</label></div>
+            <div class="radio-option"><input type="radio" id="no" name="attendance" value="No podré asistir"><label for="no">No podré asistir</label></div>
+          </div>
+        </div>
+        
+        <!-- AQUÍ ESTÁ EL CAMPO DE NÚMERO DE PERSONAS (AHORA SIEMPRE VISIBLE) -->
+        <div class="form-group" id="people-group">
+          <label for="people">¿Cuántas personas asistirán?</label>
+          <select id="people" required>
+            <option value="">Selecciona cantidad</option>
+            <option value="1">1 persona</option><option value="2">2 personas</option>
+            <option value="3">3 personas</option><option value="4">4 personas</option>
+            <option value="5">5 personas</option><option value="6">6 personas</option>
+            <option value="7">7 personas</option><option value="8">8 personas</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Un mensajito para la familia (opcional)</label>
+          <textarea id="message" maxlength="500" placeholder="Escribe unas palabras bonitas..."></textarea>
+          <div class="form-hint"><span id="msg-count">0</span>/500</div>
+        </div>
+        <button type="submit" class="btn">♡ ENVIAR CONFIRMACIÓN POR WHATSAPP</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="final-section">
+  <div class="flower-corner flower-tl">❀<span>✿</span></div>
+  <div class="flower-corner flower-tr">❀<span>✿</span></div>
+  <div class="script">Dios bendiga mi camino...</div>
+  <p>GRACIAS POR SER PARTE DE ESTE MOMENTO TAN ESPECIAL.<br>TU PRESENCIA HARÁ QUE ESTE DÍA SEA INOLVIDABLE.</p>
+  <div class="ornament" style="color:#f0d0e4;margin:14px 0;font-size:22px">♡ ✧ ♡</div>
+  <div class="script" style="font-size:38px">Con amor, Hannah Samira Benítez Díaz</div>
+</section>
+
+<footer>BAUTIZO DE HANNAH SAMIRA BENÍTEZ DÍAZ · 09.01.2027</footer>
+
+<noscript>
+  <p style="text-align:center;padding:20px;background:#f0e2f6">Activa JavaScript para ver la cuenta regresiva y confirmar asistencia.</p>
+</noscript>
+
+<audio id="background-music" src="musica-bautizo-original.mp3" loop></audio>
+<button class="music-button" id="music-button" type="button" aria-label="Silenciar o activar música" title="Silenciar o activar música">♫</button>
+
+<script>
+// Cuenta regresiva (UTC: 3 PM CDMX = 21:00 UTC)
+const eventDate = new Date('2027-01-09T21:00:00Z');
+function updateCountdown(){
+  const now = new Date(), difference = eventDate.getTime() - now.getTime();
+  if(difference <= 0){
+    ['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).textContent='00');
+    document.getElementById('count-message').textContent =
+      now < new Date('2027-01-10T06:00:00Z') ? '¡Hoy celebramos el bautizo de Hannah! ♡' : 'Gracias por haber sido parte de este día tan especial ♡';
+    return;
+  }
+  const values={
+    days:Math.floor(difference/86400000),
+    hours:Math.floor((difference/3600000)%24),
+    minutes:Math.floor((difference/60000)%60),
+    seconds:Math.floor((difference/1000)%60)
+  };
+  Object.entries(values).forEach(([id,value])=>document.getElementById(id).textContent=String(value).padStart(2,'0'));
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+
+// Música
+const music=document.getElementById('background-music');
+const musicButton=document.getElementById('music-button');
+async function attemptAutoplay(){
+  try{
+    music.muted=false;
+    await music.play();
+    musicButton.textContent='♫';
+    musicButton.classList.add('playing');
+    musicButton.title='Silenciar música';
+  }catch(error){
+    try{
+      music.muted=true;
+      await music.play();
+      musicButton.textContent='🔇';
+      musicButton.title='Activar música';
+    }catch(fallbackError){
+      musicButton.textContent='▶️';
+      musicButton.title='Reproducir música';
+    }
+  }
+}
+attemptAutoplay();
+
+musicButton.addEventListener('click',async()=>{
+  try{
+    if(music.paused){
+      await music.play();
+      music.muted=false;
+    }else{
+      music.muted=!music.muted;
+    }
+    const audible=!music.paused&&!music.muted;
+    musicButton.textContent=audible?'♫':'🔇';
+    musicButton.classList.toggle('playing',audible);
+    musicButton.title=audible?'Silenciar música':'Activar música';
+  }catch(error){
+    musicButton.textContent='▶️';
+    alert('No se pudo reproducir la música. Verifica que exista musica-bautizo-original.wav junto a index.html.');
+  }
+});
+
+// RSVP
+const yesRadio=document.getElementById('yes'), noRadio=document.getElementById('no');
+const peopleGroup=document.getElementById('people-group'), peopleSelect=document.getElementById('people');
+const msgEl=document.getElementById('message');
+const msgCount=document.getElementById('msg-count');
+
+// Al cambiar el mensaje se actualiza el contador
+msgEl.addEventListener('input',()=>{ msgCount.textContent=msgEl.value.length; });
+
+document.getElementById('rsvp-form').addEventListener('submit',function(event){
+  event.preventDefault();
+  const name=document.getElementById('guest-name').value.trim();
+  const attendance=document.querySelector('input[name="attendance"]:checked');
+  const people=peopleSelect.value;
+  const message=msgEl.value.trim();
+
+  if(!name){alert('Por favor escribe tu nombre.');return;}
+  if(!attendance){alert('Por favor selecciona si asistirás.');return;}
+  
+  // La validación de personas se mantiene por si acaso, pero como el campo es requerido siempre
+  if(attendance.value==='Sí asistiré'&&!people){alert('Selecciona cuántas personas asistirán.');return;}
+
+  const phone='529383892432';
+  let text='💜 *CONFIRMACIÓN DE BAUTIZO* 💜\n\n👼 *Hannah Samira Benítez Díaz*\n\n';
+  text+='👤 Invitado: '+name+'\n📋 Asistencia: '+attendance.value+'\n';
+  if(attendance.value==='Sí asistiré') text+='👥 Número de personas: '+people+'\n';
+  if(message) text+='💌 Mensaje: '+message+'\n';
+  text+='\n📅 Sábado 9 de enero de 2027\n🕒 3:00 P. M.\n\n¡Gracias por ser parte de este día especial! ♡';
+
+  const btn=event.target.querySelector('button[type="submit"]');
+  const original=btn.textContent;
+  btn.textContent='Abriendo WhatsApp...';
+  btn.disabled=true;
+
+  window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+
+  setTimeout(()=>{ btn.textContent=original; btn.disabled=false; }, 2000);
+});
+</script>
+</body>
+</html>
