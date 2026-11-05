@@ -238,13 +238,25 @@ footer{background:#3f2449;color:#e8d6ee;text-align:center;padding:20px;font-size
 @keyframes pulse{50%{box-shadow:0 0 0 12px rgba(212,142,184,0),0 5px 22px rgba(107,74,122,.5)}}
 @media (max-width: 650px) {
   .hero {
-    /* Cambiamos la imagen por una versión vertical o más cuadrada */
+    /* 1. Usamos tu imagen (asegúrate que el nombre sea exacto) */
     background-image: 
       linear-gradient(180deg, rgba(48,24,60,.08) 0%, rgba(48,24,60,.22) 100%),
-      url('./img/cabecera-movil.png'); /* Asegúrate de que este archivo exista */
+      url('./img/cabecera-movil.png');
+      
+    /* 2. Altura perfecta: ni muy alta ni muy chica */
+    height: 220px; 
     
-    /* Ajustamos la altura para que no sea tan alta en celular */
-    height: 250px; 
+    /* 3. CLAVE: Asegura que la imagen llene el espacio sin deformarse */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* 4. Extra: Arreglar el texto de arriba para que no se rompa en dos líneas feas */
+  .hero-below .small-text {
+    font-size: 9px; 
+    letter-spacing: 2px; 
+    padding: 0 15px; 
   }
 }
 @media(max-width:650px){section{padding:52px 15px}.hero{padding:22px 16px}.hero .small-text,.hero-below .small-text{letter-spacing:3px;font-size:9.5px}.hero .ornament,.hero-below .ornament{font-size:18px;margin:10px 0}.card{padding:24px 18px}.count-box{min-width:70px;padding:12px 8px}.count-box strong{font-size:30px}.map{height:260px}.invitation-image-container{padding:10px;}}
