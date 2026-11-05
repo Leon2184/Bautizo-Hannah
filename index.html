@@ -236,32 +236,49 @@ footer{background:#3f2449;color:#e8d6ee;text-align:center;padding:20px;font-size
 .music-button{ position:fixed;right:18px;bottom:18px;z-index:100;width:56px;height:56px; border:2px solid #fff;border-radius:50%;color:#fff;font-size:22px; background:linear-gradient(135deg,#6b4a7a,#cf8fb8); box-shadow:0 5px 20px rgba(107,74,122,.4);cursor:pointer;}
 .music-button.playing{animation:pulse 2s infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 12px rgba(212,142,184,0),0 5px 22px rgba(107,74,122,.5)}}
+
+/* --- TODOS LOS AJUSTES PARA CELULAR --- */
 @media (max-width: 650px) {
+  /* Ajustes generales de la sección */
+  section { padding: 52px 15px; }
+  
+  /* HERO en celular */
   .hero {
-    /* 1. Usamos tu imagen (asegúrate que el nombre sea exacto) */
     background-image: 
       linear-gradient(180deg, rgba(48,24,60,.08) 0%, rgba(48,24,60,.22) 100%),
       url('./img/cabecera-movil.png');
-      
-    /* 2. Altura perfecta: ni muy alta ni muy chica */
     height: 220px; 
-    
-    /* 3. CLAVE: Asegura que la imagen llene el espacio sin deformarse */
+    padding: 22px 16px;
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  /* 4. Extra: Arreglar el texto de arriba para que no se rompa en dos líneas feas */
-  .hero-below .small-text {
-    font-size: 9px; 
-    letter-spacing: 2px; 
+  /* Texto de arriba del hero */
+  .hero .small-text, .hero-below .small-text {
+    letter-spacing: 3px;
+    font-size: 9.5px;
     padding: 0 15px; 
   }
-}
-@media(max-width:650px){section{padding:52px 15px}.hero{padding:22px 16px}.hero .small-text,.hero-below .small-text{letter-spacing:3px;font-size:9.5px}.hero .ornament,.hero-below .ornament{font-size:18px;margin:10px 0}.card{padding:24px 18px}.count-box{min-width:70px;padding:12px 8px}.count-box strong{font-size:30px}.map{height:260px}.invitation-image-container{padding:10px;}}
-@media (prefers-reduced-motion: reduce){
-  *{animation:none!important;transition:none!important}
+  
+  .hero .ornament, .hero-below .ornament {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* Tarjetas y contadores */
+  .card { padding: 24px 18px; }
+  .count-box { min-width: 70px; padding: 12px 8px; }
+  .count-box strong { font-size: 30px; }
+  .map { height: 260px; }
+  .invitation-image-container { padding: 10px; }
+
+  /* ¡AQUÍ ESTÁ EL ARREGLO DE LOS NOMBRES! */
+  .invitation .section-heading .script {
+    font-size: 24px; /* Letra más chica para que no ocupe toda la pantalla */
+    line-height: 1.6; /* Le da un poco de aire entre líneas para que se lea bien */
+    padding: 0 10px; /* Evita que la letra se corte en los bordes */
+  }
 }
 </style>
 </head>
@@ -286,7 +303,7 @@ footer{background:#3f2449;color:#e8d6ee;text-align:center;padding:20px;font-size
   <div class="flower-corner flower-br">❀<span>✿</span>✧</div>
   <div class="container">
     <div class="section-heading">
-      <div class="script">Con la bendición de Dios junto a<br>Mis papas Jennyfer Díaz y Leonardo Benítez <br>Mi padrino Jairo Giovanni Muñoz González</div>
+      <div class="script">Con la bendición de Dios junto a<br>Mis papas:  Jennyfer Díaz y Leonardo Benítez <br>Mi padrino:  Jairo Giovanni Muñoz González</div>
        </div>
     <div class="card">
       <!-- AQUÍ SE COLOCÓ LA IMAGEN NUEVA -->
@@ -365,7 +382,6 @@ footer{background:#3f2449;color:#e8d6ee;text-align:center;padding:20px;font-size
             <option value="1">1 persona</option><option value="2">2 personas</option>
             <option value="3">3 personas</option><option value="4">4 personas</option>
             <option value="5">5 personas</option><option value="6">6 personas</option>
-            <option value="7">7 personas</option><option value="8">8 personas</option>
           </select>
         </div>
 
@@ -419,47 +435,73 @@ function updateCountdown(){
 }
 updateCountdown(); setInterval(updateCountdown,1000);
 
-// Música
-const music=document.getElementById('background-music');
-const musicButton=document.getElementById('music-button');
+// ----------------------------------------------------
+// LÓGICA DE MÚSICA MEJORADA
+// ----------------------------------------------------
+const music = document.getElementById('background-music');
+const musicButton = document.getElementById('music-button');
+
+// Función para actualizar el icono y el parpadeo del botón
+function updateMusicButton() {
+  const isPlaying = !music.paused && !music.muted;
+  musicButton.textContent = isPlaying ? '♫' : '🔇';
+  
+  // Si la música está sonando, quitamos el parpadeo. Si está pausada/silenciada, lo activamos.
+  musicButton.classList.toggle('playing', isPlaying); 
+  musicButton.title = isPlaying ? 'Silenciar música' : 'Activar música';
+}
+
+// Intentar reproducir al cargar la página
 async function attemptAutoplay(){
   try{
-    music.muted=false;
+    music.muted = false;
     await music.play();
-    musicButton.textContent='♫';
-    musicButton.classList.add('playing');
-    musicButton.title='Silenciar música';
+    updateMusicButton();
   }catch(error){
-    try{
-      music.muted=true;
-      await music.play();
-      musicButton.textContent='🔇';
-      musicButton.title='Activar música';
-    }catch(fallbackError){
-      musicButton.textContent='▶️';
-      musicButton.title='Reproducir música';
-    }
+    // Si el navegador lo bloquea (típico en celulares), dejamos el botón listo y parpadeando
+    music.muted = true;
+    updateMusicButton();
   }
 }
 attemptAutoplay();
 
-musicButton.addEventListener('click',async()=>{
+// EL TRUCO: Reproducir en el primer toque o scroll del usuario
+function playOnFirstInteraction() {
+  if (music.paused) {
+    music.muted = false;
+    music.play().then(() => {
+      updateMusicButton();
+      // Una vez que la música suena, quitamos los detectores para que no interfiera más
+      document.removeEventListener('click', playOnFirstInteraction);
+      document.removeEventListener('touchstart', playOnFirstInteraction);
+      document.removeEventListener('scroll', playOnFirstInteraction);
+    }).catch(e => console.log("El navegador aún bloquea el audio", e));
+  }
+}
+
+// Escuchamos el primer toque, clic o scroll en toda la página
+document.addEventListener('click', playOnFirstInteraction);
+document.addEventListener('touchstart', playOnFirstInteraction);
+document.addEventListener('scroll', playOnFirstInteraction);
+
+// Control manual por si el usuario decide usar el botón
+musicButton.addEventListener('click', async (e) => {
+  e.stopPropagation(); // Evita que se dispare el "playOnFirstInteraction" al mismo tiempo
   try{
     if(music.paused){
       await music.play();
-      music.muted=false;
-    }else{
-      music.muted=!music.muted;
+      music.muted = false;
+    } else {
+      music.muted = !music.muted;
     }
-    const audible=!music.paused&&!music.muted;
-    musicButton.textContent=audible?'♫':'🔇';
-    musicButton.classList.toggle('playing',audible);
-    musicButton.title=audible?'Silenciar música':'Activar música';
+    updateMusicButton();
   }catch(error){
-    musicButton.textContent='▶️';
-    alert('No se pudo reproducir la música. Verifica que exista musica-bautizo-original.wav junto a index.html.');
+    musicButton.textContent = '▶️';
+    alert('No se pudo reproducir la música. Verifica que el archivo de audio exista.');
   }
 });
+// ----------------------------------------------------
+
 
 // RSVP
 const yesRadio=document.getElementById('yes'), noRadio=document.getElementById('no');
@@ -480,7 +522,6 @@ document.getElementById('rsvp-form').addEventListener('submit',function(event){
   if(!name){alert('Por favor escribe tu nombre.');return;}
   if(!attendance){alert('Por favor selecciona si asistirás.');return;}
   
-  // La validación de personas se mantiene por si acaso, pero como el campo es requerido siempre
   if(attendance.value==='Sí asistiré'&&!people){alert('Selecciona cuántas personas asistirán.');return;}
 
   const phone='529383892432';
