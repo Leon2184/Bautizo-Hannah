@@ -266,18 +266,42 @@ footer{background:#3f2449;color:#e8d6ee;text-align:center;padding:20px;font-size
     margin: 10px 0;
   }
 
-  /* Tarjetas y contadores */
+  /* Tarjetas y mapa */
   .card { padding: 24px 18px; }
-  .count-box { min-width: 70px; padding: 12px 8px; }
-  .count-box strong { font-size: 30px; }
   .map { height: 260px; }
   .invitation-image-container { padding: 10px; }
 
-  /* ¡AQUÍ ESTÁ EL ARREGLO DE LOS NOMBRES! */
+  /* Arreglo de los nombres de los papás */
   .invitation .section-heading .script {
-    font-size: 24px; /* Letra más chica para que no ocupe toda la pantalla */
-    line-height: 1.6; /* Le da un poco de aire entre líneas para que se lea bien */
-    padding: 0 10px; /* Evita que la letra se corte en los bordes */
+    font-size: 24px; 
+    line-height: 1.6; 
+    padding: 0 10px; 
+  }
+
+  /* --- CUENTA REGRESIVA CORREGIDA Y COMPACTA --- */
+  .countdown {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que el 4to cuadro se caiga a otra línea */
+    gap: 4px; /* Juntitos para que quepan */
+    margin-top: 12px;
+    padding: 0 5px;
+  }
+
+  .count-box { 
+    flex: 1; /* Se reparten el ancho sobrante por igual */
+    min-width: 0; /* Quita el min-width de 70px que los hacía gigantes */
+    padding: 8px 2px; /* Hace los cuadros menos altos */
+    border-radius: 10px;
+  }
+
+  .count-box strong { 
+    font-size: 22px; /* Números más chicos y elegantes */
+    line-height: 1.1;
+  }
+
+  .count-box span {
+    font-size: 8px; /* Palabras "Días", "Horas" más chicas */
+    letter-spacing: 1px;
   }
 }
 </style>
